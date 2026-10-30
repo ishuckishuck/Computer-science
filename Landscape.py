@@ -23,6 +23,10 @@ cloud_x2 = 300
 cloud_y2 = 100
 cloud2_colour = (211, 211, 211)
 
+cloud_x3 = 400
+cloud_y3 = 80
+cloud3_colour = (192, 192, 192)
+
 road_colour = (50, 50, 50)
 
 grass_colour = (0, 75, 0)
@@ -66,6 +70,10 @@ while running:
     if cloud_x2 > WIDTH:
         cloud_x2 = 0
 
+    cloud_x3 += 7
+    if cloud_x3 > WIDTH:
+        cloud_x3 = 0
+
 
 
     # DRAWING
@@ -94,6 +102,21 @@ while running:
     pygame.draw.circle(screen, cloud2_colour, (cloud_x2-61, cloud_y2+14), 23)
     pygame.draw.rect(screen, cloud2_colour, (cloud_x2-59, cloud_y2-1, 100, 38))
 
+    # Cloud 3
+    pygame.draw.circle(screen, cloud3_colour, (cloud_x3, cloud_y3-4), 43)
+    pygame.draw.circle(screen, cloud3_colour, (cloud_x3+35, cloud_y3+13), 27)
+    pygame.draw.circle(screen, cloud3_colour, (cloud_x3-40, cloud_y3-8), 26)
+    pygame.draw.circle(screen, cloud3_colour, (cloud_x3-61, cloud_y3+14), 26)
+    pygame.draw.rect(screen, cloud3_colour, (cloud_x3-59, cloud_y3-1, 100, 41))
+
+    # tree
+    pygame.draw.rect(screen, (101, 67, 33), (590, 310, 50, 150))
+    pygame.draw.circle(screen, (0, 128, 0), (615, 270), 50)
+    pygame.draw.circle(screen, (0, 128, 0), (593, 292), 45)
+    pygame.draw.circle(screen, (0, 128, 0), (576, 250), 30)
+    pygame.draw.circle(screen, (0, 128, 0), (625, 220), 40)
+    pygame.draw.circle(screen, (0, 128, 0), (650, 283), 42)
+
     # grass hill
     pygame.draw.circle(screen, grass_colour, (400, 1425), 1000)
 
@@ -110,7 +133,6 @@ while running:
     pygame.draw.rect(screen, (245, 214, 108), (298, 300, 150, 130))
     # roof
     pygame.draw.polygon(screen, (255, 0, 0), roof_points)
-
     # door
     pygame.draw.rect(screen, (150, 75, 0), (350, 350, 50, 80))
 
